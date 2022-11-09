@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Ananda Personal Use';
+    src: url('../fonts/Ananda\ Personal\ Use.ttf');
+}
+
+#principal{
+    background-image: url(../img/fondoNuevo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.nav-estilos{
+    background-color: rgb(224, 63, 29);
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 5px 5px;
+}
+
+.name-app{
+    font-family: 'Ananda Personal Use';
+    font-size: x-large;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.8);
+}
+
+.name-app:hover{
+    color: rgb(10, 148, 95);
+}
+
+.contenedor-estilos{
+    padding: 15px;
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+}
+
+.form-estilos{
+    border-radius: 10px;
+    padding: 20px 5px 20px 5px;
+    background-color: rgb(224, 63, 29);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+.text-estilos{
+    font-size: small;
+}
