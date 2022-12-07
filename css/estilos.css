@@ -1,14 +1,8 @@
 @font-face {
     font-family: 'Ananda Personal Use';
     src: url('../fonts/Ananda\ Personal\ Use.ttf');
-}
-
-#principal{
-    background-image: url(../img/fondoNuevo.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
+    /* font-family: 'Home And Work';
+    src: url('../fonts/Home\ And\ Work.otf'); */
 }
 
 .nav-estilos{
@@ -43,6 +37,70 @@
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
 }
 
-.text-estilos{
-    font-size: small;
+.estilos-opciones{
+    width: 100%;
+    height: 30vh;
+    background-color: rgb(224, 63, 29);
+}
+
+.estilo-texto{
+    font-family: 'Ananda Personal Use';
+}
+
+.btn-estilos{
+    border-radius: 10px;
+    font-family: 'Ananda Personal Use';
+    font-size: xx-large;
+    color: white;
+    border: 1px solid rgb(10, 148, 95);
+    box-shadow: 3px 3px 10px gray;
+}
+
+.fondo1{
+    background: url('../img/desayuno.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.fondo2{
+    background: url('../img/almuerzo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.fondo3{
+    background: url('../img/cena.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.fondo4{
+    background: url('../img/bebida.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.btn-estilos:hover{
+    opacity: 0.8;
+    box-shadow: 5px 5px 10px gray;
+    transition: 0.5s ease-in-out;
+}
+
+@media (max-width: 425px) { 
+    .text-estilos{
+        font-size: small;
+    }
+    
+    .span-hide{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    body{
+        background-image: url("../img/fondo.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
 }
