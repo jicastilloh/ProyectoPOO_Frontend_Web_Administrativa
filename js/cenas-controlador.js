@@ -1,45 +1,45 @@
-let eliminarAlmuerzo = false;
-let actualizarAlm = false;
+let eliminarCen = false;
+let actualizarCen = false;
 
-let almuerzos = document.getElementById('almuerzos');
-almuerzos.addEventListener('click', mostrarAlmuerzos);
+let cenas = document.getElementById('cenas');
+cenas.addEventListener('click', mostrarCenas);
 
-function mostrarAlmuerzos(){
+function mostrarCenas(){
     
     const http = new XMLHttpRequest();
-    const url = `http://127.0.0.1:3000/almuerzos`;
+    const url = `http://127.0.0.1:3000/cenas`;
     
     http.onreadystatechange = function(){
     
         if(this.readyState == 4 && this.status == 200){
             
-            let respuestaAlmuerzos = JSON.parse(this.responseText);
+            let respuestaCenas = JSON.parse(this.responseText);
             
 
-            let verAlmuerzos = document.getElementById('contenido-almuerzos');
-            verAlmuerzos.innerHTML = '';
+            let verCenas = document.getElementById('contenido-cenas');
+            verCenas.innerHTML = '';
             
-            for(let i = 0; i < respuestaAlmuerzos.length; i++){
+            for(let i = 0; i < respuestaCenas.length; i++){
                 
-                verAlmuerzos.innerHTML += `
+                verCenas.innerHTML += `
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <div class="input-group mb-2">
                                 <span class="input-group-text">Nombre</span>
-                                <input id="nameAlm" type="text" class="form-control" value="${respuestaAlmuerzos[i].nombre}">
+                                <input id="nameCena" type="text" class="form-control" value="${respuestaCenas[i].nombre}">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="input-group mb-2">
                                 <span class="input-group-text">Precio</span>
-                                <input id="priceAlm" type="number" class="form-control" value="${respuestaAlmuerzos[i].precio}">
+                                <input id="priceCena" type="number" class="form-control" value="${respuestaCenas[i].precio}">
                             </div>
                         </div>
                     </div>
                     <div class="row justify-content-around">
-                        <button onclick="actAlm('${respuestaAlmuerzos[i]._id}')" class="btn btn-warning">Actualizar</button>
-                        <button onclick="eliminarAlm('${respuestaAlmuerzos[i]._id}')" class="btn btn-danger">Eliminar</button>
+                        <button onclick="actualizarCena('${respuestaCenas[i]._id}')" class="btn btn-warning">Actualizar</button>
+                        <button onclick="eliminarCena('${respuestaCenas[i]._id}')" class="btn btn-danger">Eliminar</button>
                     </div>
                 </div>
                 <hr>
@@ -57,18 +57,18 @@ function mostrarAlmuerzos(){
     http.send()
 }
 
-eliminarAlmuerzo = true;
-if(eliminarAlmuerzo){
+eliminarCen = true;
+if(eliminarCen){
 
-    function eliminarAlm(id){
+    function eliminarCena(id){
         const http = new XMLHttpRequest();
-        const url = `http://127.0.0.1:3000/almuerzos/${id}`;
+        const url = `http://127.0.0.1:3000/cenas/${id}`;
 
         http.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){
                 
-                alert(`Se eliminó el almuerzo con el id: ${id}`);
-                console.log(`Se eliminó el almuerzo con el id: ${id}`)
+                alert(`Se eliminó la cena con el id: ${id}`);
+                console.log(`Se eliminó la cena con el id: ${id}`)
                 
             }
         }
@@ -81,20 +81,20 @@ if(eliminarAlmuerzo){
 
 }
 
-actualizarAlm = true;
-if(actualizarAlm){
+actualizarCen = true;
+if(actualizarCen){
 
-    function actAlm(id){
+    function actualizarCena(id){
         console.log(`Actualizando: ${id}`)
         const http = new XMLHttpRequest();
-        const url = `http://127.0.0.1:3000/almuerzos/${id}`;
+        const url = `http://127.0.0.1:3000/cenas/${id}`;
     
-        let data = `nombre=${document.getElementById('nameAlm').value}&precio=${document.getElementById('priceAlm').value}`;
+        let data = `nombre=${document.getElementById('nameCena').value}&precio=${document.getElementById('priceCena').value}`;
 
         http.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){
                 console.log(JSON.parse(this.responseText));
-                alert('Almuerzo actualizado correctamente');
+                alert('Cena actualizada correctamente');
             }
         }
         
@@ -105,47 +105,47 @@ if(actualizarAlm){
 
 }
 
-let addAlmuerzo = false;
-let mostrarFormAlmuerzo = document.getElementById('contenido-agregando-almuerzos');
-mostrarFormAlmuerzo.innerHTML = '';
-mostrarFormAlmuerzo.innerHTML += `
+let addCena = false;
+let mostrarFormCena = document.getElementById('contenido-agregando-cenas');
+mostrarFormCena.innerHTML = '';
+mostrarFormCena.innerHTML += `
 <div class="container">
     <div class="row">
         <div class="col-12">
             <div class="input-group mb-2">
                 <span class="input-group-text">Nombre</span>
-                <input id="nombreAlmuerzo" type="text" class="form-control">
+                <input id="nombreCena" type="text" class="form-control">
             </div>
         </div>
         <div class="col-12">
             <div class="input-group mb-2">
                 <span class="input-group-text">Precio</span>
-                <input id="precioAlmuerzo" type="number" class="form-control">
+                <input id="precioCena" type="number" class="form-control">
             </div>
         </div>
     </div>
     <div class="row justify-content-around">
-        <button id="enviar-datos-almuerzo" class="btn btn-primary">Agregar</button>
+        <button id="enviar-datos-cena" class="btn btn-primary">Agregar</button>
     </div>
 </div>
 `
 
-addAlmuerzo = true;
-if(addAlmuerzo){
+addCena = true;
+if(addCena){
 
-    let agregandoAlmuerzo = document.getElementById('enviar-datos-almuerzo');
-    agregandoAlmuerzo.addEventListener('click', agregarAlmuerzo);
+    let agregandoCena = document.getElementById('enviar-datos-cena');
+    agregandoCena.addEventListener('click', agregarCena);
     
-    function agregarAlmuerzo(){
+    function agregarCena(){
 
         const http = new XMLHttpRequest();
-        const url = `http://127.0.0.1:3000/almuerzos/`;
+        const url = `http://127.0.0.1:3000/cenas/`;
     
-        let data = `nombre=${document.getElementById('nombreAlmuerzo').value}&precio=${document.getElementById('precioAlmuerzo').value}`;
+        let data = `nombre=${document.getElementById('nombreCena').value}&precio=${document.getElementById('precioCena').value}`;
 
         http.onreadystatechange = function(){
             if(this.readyState == 4 && this.status == 200){
-                alert('Almuerzo agregado correctamente');
+                alert('Cena agregada correctamente');
             }
         }
         
