@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deprisa Gestiones</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../img/faviconLogo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <nav class="navbar nav-estilos">
+        <div class="container-fluid justify-content-center">
+            <a style="font-size: xx-large;" class="navbar-brand mr-0 name-app" href="#">Administrar Repartidores</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="estilos-vista-repartidores mt-4">
+
+            <table class="table">
+                <thead class="estilos-encabezado-tabla">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Eliminar</th>
+                        <th>Información</th>
+                    </tr>
+                </thead>
+                <tbody id="mostrar-repartidores">
+                    
+                </tbody>
+            </table>
+
+            <div class="row justify-content-center">
+                <button style="background-color: rgb(10, 148, 95);" data-bs-toggle="modal" data-bs-target="#addRepModal" type="button" class="btn btn-success mt-2">
+                    Agregar Repartidor
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+
+        
+    <!-- Modal ver info -->
+    <div class="modal fade" id="repartidoresModal" tabindex="-1" aria-labelledby="repartidoresModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="repartidoresModalLabel">Repartidor</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="datos-repartidor" class="modal-body">
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <!-- Modal agregar -->
+    <div class="modal fade" id="addRepModal" tabindex="-1" aria-labelledby="addRepModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="addRepModalLabel">Repartidor datos</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">Nombre</span>
+                                <input id="nombreRep" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">Usuario</span>
+                                <input id="userRep" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">Contraseña</span>
+                                <input id="passRep" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-around">
+                        <button id="enviar-datos" class="btn btn-primary">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    </div> 
+    
+
+
+    <script src="../js/repartidores-controlador/repartidores-controlador.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</body>
+</html>

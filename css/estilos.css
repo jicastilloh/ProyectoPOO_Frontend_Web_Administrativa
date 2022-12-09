@@ -86,6 +86,42 @@
     transition: 0.5s ease-in-out;
 }
 
+.estilos-vista-repartidores{
+    width: 60vw; 
+    margin: 0 auto; 
+}
+
+.estilos-encabezado-tabla{
+    background-color: rgb(10, 148, 95);
+    color: white;
+    font-size: large;
+}
+
+.tamanio-texto{
+    font-size: large;
+}
+
+.estilos-eliminar{
+    background-color: rgb(224, 63, 29);;
+}
+
+.estilos-info{
+    background-color: rgb(10, 148, 95);
+}
+
+table{
+    border: 1px solid rgb(10, 148, 95);
+    box-shadow: 1px 1px 25px rgba(10, 148, 95, 0.15);
+}
+
+tr th{
+    text-align: center;
+}
+
+tbody td{
+    text-align: center;
+}
+
 @media (max-width: 425px) { 
     .text-estilos{
         font-size: small;
